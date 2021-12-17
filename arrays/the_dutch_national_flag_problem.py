@@ -19,7 +19,7 @@ def dutch_national_flag_solution(array, index):
             left += 1
 
     array.reverse()
-    # print (array)
+
     left, right = 0, len(array) -1
 
     while left < right:
@@ -36,15 +36,21 @@ def dutch_national_flag_solution(array, index):
 def is_solution(sorted_array, pivot):
 
     first_pivot_index = sorted_array.index(pivot)
+    pivot_count = sorted_array.count(pivot)
     ctr = 0
 
     while ctr < first_pivot_index:
         if not sorted_array[ctr] < pivot:
             return False
         ctr += 1
+    stop_index = ctr
+    while ctr < (stop_index + pivot_count):
+        if not sorted_array[ctr] == pivot:
+            return False
+        ctr += 1
 
     while ctr < len(sorted_array):
-        if sorted_array[ctr] < pivot:
+        if not sorted_array[ctr] > pivot:
             return False
         ctr += 1
 
