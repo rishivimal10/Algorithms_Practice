@@ -1,3 +1,5 @@
+"""
+Problem:
 # Write a program that takes an array A and an index i into A,
 # and rearranges the elements such that all elements less than A[r] (the "pivot") appear first,
 # followed by elements equal to the pivot, followed by elements greater than the pivot.
@@ -5,6 +7,18 @@
 # suppose A = [0,1,2,0,2,1,1], and the pivot index is 3. Then A[3] = 0, so
 # [0,0,1,2,2,1,1] is a valid partitioning. For the same array, if the pivot index is 2, then A[2] = 2,
 # the arrays [0,1,0,1,1,2,2] as well as [0,0, 1,1,1,2,2] are valid partitionings.
+
+High-Level Breakdown of my Algorithm:
+    - First Pass:
+        - Go through array and move all values less than the pivot value to back of list
+    - Reverse the list
+    - Second Pass:
+        - Go through list and move all values greater than pivot to the back of list
+
+    Time Complexity = O(n)
+    Space Complexity = O(1)
+"""
+
 
 def dutch_national_flag_solution(array, index):
     pivot_value = array[index]
