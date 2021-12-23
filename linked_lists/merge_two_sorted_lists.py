@@ -11,6 +11,7 @@ def merge_two_sorted_lists_solution(list1, list2):
 
     temp = current = ListNode()
     while list1 and list2:
+
         if list2 < list1:
             current.next = list2
             list2 = list2.next
